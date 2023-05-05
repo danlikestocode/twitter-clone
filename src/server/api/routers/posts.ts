@@ -93,6 +93,7 @@ export const postsRouter = createTRPCRouter({
       z.object({
         content: z
           .string()
+          .emoji("This post must contain only emojis!")
           .min(1, "This post is too short!")
           .max(255, "This post is too long!"),
       })
